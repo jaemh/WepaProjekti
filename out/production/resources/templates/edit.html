@@ -17,12 +17,23 @@
     <h4>Title:</h4>
     <input name="title" th:value="${editNews.title}" style="width: 300px"/>
     <h4>Paragraph</h4>
-    <textarea style="width: 300px"  name="leadParagraph"></textarea>
+    <textarea style="width: 300px" th:field="*{editNews.leadParagraph}" name="leadParagraph"></textarea>
     <h4>Text:</h4>
-    <textarea style="width: 300px" th:value="${editNews.text}" name="text"></textarea>
+    <textarea style="width: 300px" th:field="*{editNews.text}" name="text"></textarea>
 
     <h4>Date:</h4>
     <input name="date" type="date" placeholder="date"/>
+
+    <h4>Writer:</h4>
+    <input name="writerName" type="text" placeholder="writer"/>
+
+    <h4>Category:</h4>
+
+    <select id="category" name="category">
+        <option value="economy">Economy</option>
+        <option value="business">Business</option>
+        <option value="science" >Science</option>
+    </select>
 
     <h4>Select image:</h4>
         <input type="file" name="image"/>

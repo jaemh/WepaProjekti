@@ -1,23 +1,44 @@
 package com.wepa.justnews.Domain;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+
 import org.springframework.data.jpa.domain.AbstractPersistable;
 import org.springframework.transaction.annotation.Transactional;
 
-@Entity
+import java.util.List;
+
+    @Entity
     public class Writer extends AbstractPersistable<Long> {
 
-        private String name;
+    @ManyToMany(mappedBy = "relatedWriter")
+    private List<News> relatedNews;
 
-        @Transactional
-        public String getName() {
-            return name;
-        }
+    private String name;
 
-        @Transactional
-        public void setName(String name) {
-            this.name = name;
-        }
 
+    public String getName() {
+        return name;
     }
+
+    @Transactional
+    public void setName(String name) {
+    this.name = name;
+    }
+
+    public List<News> getRelatedNews() {
+        return relatedNews;
+    }
+
+    @Transactional
+    public void setRelatedNews(List<News> relatedNews) {
+        this.relatedNews = relatedNews;
+    }
+
+}
+
+
+
+
+
 

@@ -4,20 +4,38 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
 public class Category extends AbstractPersistable<Long> {
 
-    private String category;
 
+    @ManyToMany(mappedBy = "relatedCategory")
+    private List<News> relatedNews;
 
-    public String getCategory() {
-        return category;
+    private String name;
+
+    public String getName() {
+        return name;
     }
 
     @Transactional
-    public void setCategory(String category) {
-        this.category = category;
+    public void setName(String name) {
+        this.name = name;
     }
+
+    public List<News> getRelatedNews() {
+        return relatedNews;
+    }
+
+    public void setRelatedNews(List<News> relatedNews) {
+        this.relatedNews = relatedNews;
+    }
+
+
 }
+
+
+

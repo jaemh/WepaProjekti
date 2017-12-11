@@ -11,6 +11,7 @@
     <div class="titley" th:text="${show.title}"></div>
     <div  class="text" th:text="${show.text}"></div>
     <img class="news-image" th:src="@{/image/{id}(id=${show.relatedImage.id})}" />
+    <br />
     <button><a th:href="@{/edit/news/{id}(id=${show.id})}">Edit</a></button>
 
     <form th:action="@{/delete/news/{id}(id=${show.id})}" th:method="DELETE">

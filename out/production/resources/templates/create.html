@@ -23,10 +23,22 @@
                 <textarea style="width: 300px" name="text"></textarea>
 
                 <h4>Date:</h4>
-                <input name="date" type="date" placeholder="date"/>
+                <input name="publishDate" type="datetime-local" placeholder="date"/>
+
+                <h4>Category:</h4>
+
+             <select id="category" name="categoryName">
+                 <option value="economy">Economy</option>
+                 <option value="business">Business</option>
+                 <option value="science" >Science</option>
+             </select>
+
+                <h4>Writer:</h4>
+                <input name="writerName" type="text" placeholder="writer"/>
 
                 <h4>Select image:</h4>
                 <input type="file" name="image"/>
+
 
 
                 <input type="submit" value="Submit"/>

@@ -13,11 +13,12 @@
                 <h2 class="title" th:text="${news.title}"></h2>
                 <p class="paragraph" th:text="${news.leadParagraph}"></p>
                 <img class="news-image" th:src="@{/image/{id}(id=${news.relatedImage.id})}" />
-                <!--<p class="category" th:text="${news.category}"></p>-->
-
+                <div class="news-category">Category: <span th:each="category : ${news.relatedCategory}" th:text="${category.name}"></span></div>
+                <div class="news-date">Published at: <span th:text="${news.date}"></span></div>
+                <div class="news-writer">Writer: <span th:each="writer : ${news.relatedWriter}" th:text="${writer.name}"></span></div>
+                <br />
                 <td><a th:href="@{/show/news/{id}(id=${news.id})}">Read the whole news</a></td>
-
-
+                <hr />
             </article>
         </div>
     </body>

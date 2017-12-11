@@ -1,5 +1,5 @@
 
-#Käyttötapaus 1: Uutisen luonti
+# Käyttötapaus 1: Uutisen luonti
 
 Käyttäjä: Vierailija uutissivustolla.
 
@@ -13,7 +13,7 @@ Poikkeuksellinen toiminta: Jos vierailija ei täytä kaikkia kohtia, seuraa virh
 
 
 
-#Käyttötapaus 2: Uutisen poistaminen
+# Käyttötapaus 2: Uutisen poistaminen
 
 Käyttäjä: Uutisen luoja.
 

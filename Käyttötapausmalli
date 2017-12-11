@@ -1,0 +1,27 @@
+
+#Käyttötapaus 1: Uutisen luonti
+
+Käyttäjä: Vierailija uutissivustolla.
+
+Tavoite: Luoda uusi uutinen.
+
+Käyttötapauksen laukaisija: Vierailija haluaa luoda uutisen.
+
+Käyttötapauksen kulku: Vierailija painaa Add news -nappia, navigointipalkista. Vierailijalle avautuu lomake, johon hänen tulee täyttää kysytyt tiedot. Lopuksi vierailia tallentaa uutisen painamalla submit -nappia.
+
+Poikkeuksellinen toiminta: Jos vierailija ei täytä kaikkia kohtia, seuraa virheilmoitus.
+
+
+
+#Käyttötapaus 2: Uutisen poistaminen
+
+Käyttäjä: Uutisen luoja.
+
+Tavoite: Poistaa uutinen.
+
+Käyttötapauksen laukaisija: Vierailija haluaa poistaa luomansa uutisen. 
+
+Käyttötapauksen kulku: Käyttäjä painaa oman uutisen alta linkkiä "Read the whole news", jolloin hän pääsee tarkastelemaan koko uutista.
+Uutisen alla käyttäjä painaa delete -nappia, jonka jälkeen käyttäjä ohjataan takaisin pääsivulle, jossa ei ole enää kyseistä uutista.  Vierailijalle avautuu lomake, johon hänen tulee täyttää kysytyt tiedot. Lopuksi vierailia tallentaa uutisen painamalla submit -nappia.
+
+Poikkeuksellinen toiminta: Perustoiminnallisuus

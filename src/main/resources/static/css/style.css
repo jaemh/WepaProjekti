@@ -1,0 +1,91 @@
+
+
+.navigation {
+    background-color: coral;
+    overflow: hidden;
+
+}
+.navigation a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 20px 40px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: "Arial";
+}
+
+body {
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#cbccc8)) fixed;
+}
+
+.title {
+    color: red;
+    text-transform: uppercase;
+    font-size: 50px;
+}
+
+.paragraph {
+    font-size: 20px;
+}
+
+h2 {
+    color: black;
+    margin-left: 0px;
+}
+
+h4 {
+    margin-left: 0px;
+
+}
+
+.news-image {
+    max-width: 50%;
+}
+
+.form {
+
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 5px;
+    margin: auto;
+    width: 40%;
+}
+
+input, textarea {
+    -webkit-appearance: none;
+    background-color: white;
+    border-color: #dddddd;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: none !important;
+    display: block;
+    font-size: 17px;
+    margin: 0px;
+    outline: none !important;
+    padding: 5px;
+    resize: none;
+    text-align: left;
+}
+
+.type-selection {
+    padding: 444px;
+    margin: 10px;
+    width: 500px;
+}
+
+.titley {
+    color: red;
+    text-transform: uppercase;
+    font-size: 50px;
+}
+
+.text {
+
+    font-size: 20px;
+
+}
+
+

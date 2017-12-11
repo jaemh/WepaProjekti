@@ -3,9 +3,13 @@ package com.wepa.justnews.Domain;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class News extends AbstractPersistable<Long> {
@@ -13,10 +17,21 @@ public class News extends AbstractPersistable<Long> {
     private String title;
     private String leadParagraph;
     private String text;
-    private String image;
     private Date date;
 
+    @OneToOne
+    private Image relatedImage;
+
+    public Image getRelatedImage() {
+        return relatedImage;
+    }
+
     @Transactional
+    public void setRelatedImage(Image relatedImage) {
+        this.relatedImage = relatedImage;
+    }
+
+
     public String getTitle() {
         return title;
     }
@@ -26,7 +41,7 @@ public class News extends AbstractPersistable<Long> {
         this.title = title;
     }
 
-    @Transactional
+
     public String getLeadParagraph() {
         return leadParagraph;
     }
@@ -36,7 +51,7 @@ public class News extends AbstractPersistable<Long> {
         this.leadParagraph = leadParagraph;
     }
 
-    @Transactional
+
     public String getText() {
         return text;
     }
@@ -46,17 +61,8 @@ public class News extends AbstractPersistable<Long> {
         this.text = text;
     }
 
-    @Transactional
-    public String getImage() {
-        return image;
-    }
 
-    @Transactional
-    public void setImage(String image) {
-        this.image = image;
-    }
 
-    @Transactional
     public Date getDate() {
         return date;
     }

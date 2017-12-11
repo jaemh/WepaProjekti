@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+
+<head><title>Single news</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+    <th:block layout:replace="fragments/navigation"/>
+
+    <div class="titley" th:text="${show.title}"></div>
+    <div  class="text" th:text="${show.text}"></div>
+    <img class="news-image" th:src="@{/image/{id}(id=${show.relatedImage.id})}" />
+    <button><a th:href="@{/edit/news/{id}(id=${show.id})}">Edit</a></button>
+
+    <form th:action="@{/delete/news/{id}(id=${show.id})}" th:method="DELETE">
+        <input class="delete" type="submit" value="Delete"/>
+    </form>
+
+</body>
+
+</html>

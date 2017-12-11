@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Add news</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+
+ <body>
+    <th:block layout:replace="fragments/navigation"/>
+
+    <div class="form" id="news-form">
+         <form th:action="@{/create}" method="POST" enctype="multipart/form-data">
+            <input type="hidden" value="news"/>
+                <h2> Add news:</h2>
+                <h4>Title:</h4>
+                <input name="title" type="text" style="width: 300px"/>
+
+                <h4>Lead Paragraph:</h4>
+                <textarea style="width: 300px" name="leadParagraph"></textarea>
+
+                <h4>Text:</h4>
+                <textarea style="width: 300px" name="text"></textarea>
+
+                <h4>Date:</h4>
+                <input name="date" type="date" placeholder="date"/>
+
+                <h4>Select image:</h4>
+                <input type="file" name="image"/>
+
+
+                <input type="submit" value="Submit"/>
+        </form>
+
+    </div>
+
+
+ </body>
+</html>

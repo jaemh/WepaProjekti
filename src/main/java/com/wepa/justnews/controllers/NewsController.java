@@ -8,6 +8,7 @@ import com.wepa.justnews.Repository.CategoryRepository;
 import com.wepa.justnews.Repository.NewsRepository;
 import com.wepa.justnews.Repository.WriterRepository;
 import com.wepa.justnews.service.NewsService;
+import com.wepa.justnews.service.ValidatorServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
@@ -39,6 +40,9 @@ public class NewsController{
     @Autowired
     private WriterRepository writerRepository;
 
+    @Autowired
+    private ValidatorServices validator;
+
 
 
     @GetMapping("/")
@@ -55,11 +59,11 @@ public class NewsController{
     @GetMapping("/news")
     public String getNews(Model model) {
         List<News> news = newsRepository.findAll();
+
         news.sort(Comparator.comparing(News::getDate));
         model.addAttribute("news", news);
 
         if (news.size() >= 5) {
-
             news = news.subList(0, 5);
         }
         model.addAttribute("news", news);
@@ -124,12 +128,18 @@ public class NewsController{
 
         Image savedImage;
 
-        if(image != null) {
+        if(image.getSize() > 0) {
             savedImage = newsService.saveImage(image);
             create.setRelatedImage(savedImage);
         }
+        News createdNews;
 
-        News createdNews = newsRepository.save(create);
+        if(validator.validateNews(create)) {
+            createdNews = newsRepository.save(create);
+        } else {
+            model.addAttribute("errors", validator.getErrors());
+            return "create";
+        }
 
         List<News> relatedNews = savedCategory.getRelatedNews();
         if(relatedNews != null) {
